@@ -5,3 +5,13 @@
 ● El código debe contener comentarios
 ● Se debe crear el proyecto utilizando herramientas de versionamiento.
 */
+
+const express = require('express');
+const app = express();
+
+const mongoose = require('mongoose');
+app.get('/',(req,res)=>{
+    res.send("Hola mundo");
+})
+
+app.listen(30001);
