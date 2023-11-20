@@ -10,7 +10,7 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/',(req,res)=>{
-    console.log("recibido: \n"+JSON.stringify(req.body));
+    console.log("recibido: \n"+JSON.stringify(req.body)); //Ver lo que se recibió
     //console.log("Me está llegando algo");
     const {user, pass} = req.body;
     //Validar si los datos están llegando completos
