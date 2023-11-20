@@ -7,11 +7,23 @@
 */
 
 const express = require('express');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 const app = express();
 
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser'); //Agregado para poder destructurar el post request
+
+app.use(bodyParser.json());
+
+//Abrir la pagina principal "Login"
 app.get('/',(req,res)=>{
-    res.send("Hola mundo");
+    res.send('Inicio');
 })
+
+//Para gestionar a bases de datos mongo atlas
+app.use('/api/user',require('./routes/db_Users'));
+
+app.set('json spaces',2); //configuracin de los espacion para el formato json
 
 app.listen(30001);
