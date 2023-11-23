@@ -7,7 +7,7 @@ const dbUser = require('../models/users');
 //Crear Usuario a la base de datos de mongodb atlas.
 
 router.get('/',(req,res)=>{
-    res.json("OK");
+    res.json("OK Está solo de prueba");
 })
 
 router.post('/',(req,res)=>{
@@ -44,10 +44,7 @@ router.post('/',(req,res)=>{
                 res.status(500).send("Error al buscar en la base de datos");
             }
         }
-        // const id = usuario.length +1;
-        // const newUsuario = {...req.body,id}
-        // usuario.push(newUsuario);
-        // // console.log(newPeli);
+        
         mostrar();
     }else{
         res.status(500).send("Error de procesado Peticion errónea")
@@ -55,10 +52,10 @@ router.post('/',(req,res)=>{
     
 })
 //Eliminar Usuario por el ID
-router.delete('/:id',(req,res)=>{
-    const {id} = req.params;
-    console.log(req.params);
-    res.send("eliminado")
-})
+// router.delete('/:id',(req,res)=>{
+//     const {id} = req.params;
+//     console.log(req.params);
+//     res.send("eliminado")
+// })
 
 module.exports = router;
